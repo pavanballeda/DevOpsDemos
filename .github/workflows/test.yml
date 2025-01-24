@@ -1,0 +1,20 @@
+name: Simple Workflow
+
+# Trigger this workflow on pushes to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-basic-script:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Run a custom script
+      - name: Run a script
+        run: echo "Hello, GitHub Actions!"
